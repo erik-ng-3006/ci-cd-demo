@@ -18,7 +18,7 @@ class IntegrationTest {
 
     @Test
     void testHelloEndpoint() throws Exception {
-        mockMvc.perform(get("/hello"))
+        mockMvc.perform(get("/api/helloworld"))
                .andExpect(status().isOk())
                .andExpect(content().string("Hello, World!"));
     }
