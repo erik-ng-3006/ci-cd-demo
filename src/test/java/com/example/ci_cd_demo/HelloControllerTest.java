@@ -9,13 +9,12 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 class HelloControllerTest {
-
-    
     @Autowired
     private TestRestTemplate restTemplate;
 
    @Test
     void testHelloEndpoint() {
+        // Ensure the URL is correct
         String response = restTemplate.getForObject("/api/helloworld", String.class);
         assertThat(response).isEqualTo("Hello, World!");
     }
